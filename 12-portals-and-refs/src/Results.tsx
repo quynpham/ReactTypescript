@@ -1,6 +1,8 @@
-import Pet from "./Pet";
+import { FunctionComponent } from "react";
+import Pet from  "./Pet";
+import {Pet as PetType} from "./APIResponseTypes";
 
-const Results = ({ pets }) => {
+const Results: FunctionComponent<{ pets: PetType[] }> = ({ pets }) => {
   return (
     <div className="search">
       {!pets.length ? (
@@ -17,7 +19,7 @@ const Results = ({ pets }) => {
               location={`${pet.city}, ${pet.state}`}
               id={pet.id}
             />
-          );
+          )
         })
       )}
     </div>
